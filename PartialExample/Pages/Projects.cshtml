@@ -1,4 +1,17 @@
 ﻿@page
 @model PartialExample.Pages.ProjectsModel
+@using PartialExample.Models
 @{
 }
+<h1>Invoice @Model.InvoiceId</h1>
+
+<!-- Other invoice details here -->
+<!-- Render the message box partial view -->
+@{
+    var messageBoxModel = new MessageBox
+            {
+                Group = "invoice",
+                Id = Model.InvoiceId
+            };
+}
+<partial name="~/Pages/Shared/_MessageBox.cshtml" model="messageBoxModel" />
