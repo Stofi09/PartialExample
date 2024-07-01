@@ -1,0 +1,20 @@
+﻿@using PartialExample.Models;
+
+<div>
+    <h3>Messages for @Model.Group @Model.Id</h3>
+    <div id="messages">
+        @foreach (var message in Model.Messages)
+        {
+            <div class="message">
+                <strong>@message.User</strong>: @message.Text <em>(@message.Timestamp.ToShortTimeString())</em>
+            </div>
+        }
+    </div>
+    <textarea placeholder="Write your message..."></textarea>
+    <button type="button">Send</button>
+    <div>
+        <label for="fileUpload">Attach Document:</label>
+        <input type="file" id="fileUpload" name="fileUpload">
+    </div>
+    <!-- Add logic for mentioning people -->
+</div>
